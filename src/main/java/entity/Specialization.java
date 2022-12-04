@@ -1,7 +1,6 @@
 package entity;
 
 
-import constants.InjuryType;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,16 +13,13 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "history")
+@Table(name = "specialization")
+public class Specialization {
 
-public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private int id;
-    @Enumerated
-    private InjuryType injuryType;
-    private String description;
-    @ManyToOne
-    private Aniceta aniceta;
+
+    private String name;
 
 }

@@ -1,7 +1,8 @@
 package entity;
 
 
-import constants.InjuryType;
+import constants.Country;
+import constants.Region;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -14,16 +15,24 @@ import javax.persistence.*;
 @NoArgsConstructor
 @Entity
 @Builder
-@Table(name = "history")
+@Table(name = "address")
+public class Address {
 
-public class History {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
-    @Enumerated
-    private InjuryType injuryType;
-    private String description;
+    private Integer id;
+
+    private Country country;
+
+    private Region region;
+
+    private String city;
+
+    private String street;
+
+    private String houseMember;
+
     @ManyToOne
-    private Aniceta aniceta;
+    private User user;
 
 }
